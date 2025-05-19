@@ -1,0 +1,24 @@
+<section id="projects" class="projects-section section">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    
+    <div class="projects-container">
+      <mat-card *ngFor="let project of projects" class="project-card">
+        <mat-card-header>
+          <mat-card-title>{{ project.title }}</mat-card-title>
+          <mat-card-subtitle>{{ project.period }}</mat-card-subtitle>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <p>{{ project.description }}</p>
+          
+          <div class="technologies">
+            <mat-chip-list>
+              <mat-chip *ngFor="let tech of project.technologies" color="primary" selected>{{ tech }}</mat-chip>
+            </mat-chip-list>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

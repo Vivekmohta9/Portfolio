@@ -1,0 +1,32 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>Vivek Mohta</h3>
+        <p>Software Engineer | Angular | .NET Core | Azure</p>
+      </div>
+      
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li *ngFor="let nav of footerNavs">
+            <a (click)="scrollTo(nav.id)">{{ nav.name }}</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" [attr.aria-label]="social.name">
+            <mat-icon>{{ social.icon }}</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Vivek Mohta. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>

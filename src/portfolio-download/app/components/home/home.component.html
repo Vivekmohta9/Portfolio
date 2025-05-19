@@ -1,0 +1,25 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h1 class="animate-in">Vivek Mohta</h1>
+      <h2 class="animate-in delay-1">Software Engineer</h2>
+      <p class="animate-in delay-2">
+        Specializing in Angular, .NET Core and Azure Cloud Solutions
+      </p>
+      <div class="cta-buttons animate-in delay-3">
+        <button mat-raised-button color="primary" (click)="scrollToSection('about')">About Me</button>
+        <button mat-raised-button color="accent" (click)="scrollToSection('contact')">Get In Touch</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Sections -->
+  <app-about></app-about>
+  <app-experience></app-experience>
+  <app-projects></app-projects>
+  <app-skills></app-skills>
+  <app-education></app-education>
+  <app-achievements></app-achievements>
+  <app-contact></app-contact>
+</div>

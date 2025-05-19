@@ -15,10 +15,6 @@ author = "agent"
 task = "workflow.run"
 args = "Angular Portfolio App"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Static Portfolio App"
-
 [[workflows.workflow]]
 name = "Angular Portfolio App"
 author = "agent"
@@ -26,15 +22,6 @@ author = "agent"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd src && npx http-server -p 5000 --cors"
-waitForPort = 5000
-
-[[workflows.workflow]]
-name = "Static Portfolio App"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd src && python3 -m http.server 5000"
 waitForPort = 5000
 
 [deployment]
