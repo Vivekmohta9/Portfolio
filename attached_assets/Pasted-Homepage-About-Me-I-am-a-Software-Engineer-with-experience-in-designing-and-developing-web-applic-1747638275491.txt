@@ -1,0 +1,63 @@
+Homepage:
+
+About Me
+
+I am a Software Engineer with experience in designing and developing web applications. I have a strong foundation in technologies such as Angular, .NET Core, and Azure. My career goal is to work in an environment where I can grow professionally and effectively use my skills and knowledge. 
+
+Work Experience
+
+Software Engineer, Saint Gobain (12/2022 - Present)
+
+Managed deployment tasks. 
+
+Understood business functionality and application architecture. 
+
+Developed functionality according to requirements. 
+
+Software Engineer, Capgemini (10/2020 - 11/2022)
+
+Designed Angular components and responsive UI screens. 
+
+Upgraded .Net Core 2.2 to 6 version. 
+
+Led an Angular migration project from Angular 7 to 12. 
+
+Projects
+
+One Cost (12/2022 - Present): A common flexible tool for RFQ cost calculation. This project involved migrating from on-premise to Azure cloud and was rewritten using Angular and .Net Core. 
+
+Proof Direct (11/2021 - 11/2022): Upgraded Angular version from 7 to 12, implemented vulnerability fixes, and integrated Clamav for malware detection.
+
+GMT - Generic Mapping Tool (11/2020 - 10/2021): A tool designed to bridge different systems by enabling users to map related data. This project also involved migration from on-premise to Azure cloud.
+
+Skills
+
+Azure, Angular, Azure Devops, HTML, CSS, JavaScript, C#, .NET Core, API Integration, SQL Server, TypeScript 
+
+Education
+
+Bachelor of Technology - B Tech, Computer Science: JECRC University (2016-2020), 8.5 CGPA
+
+Senior Secondary: New Public Sr Secondary School (2015-2016)
+
+Higher Secondary Education: Springdales Children's School (2013-2014)
+
+Achievements
+
+NGT Enablement Program: Selected as one of 30 candidates among 100 in Capgemini's Next Generation Talent Enablement Program. 
+
+Final Round Selection: Selected among 100 people at a national level IOT event at IIT Bombay, hosted by i3indiya technologies. 
+
+Dell Campassdor at Dell
+
+Internshala Student Partner
+
+Contact
+
+Email: vivekmohta09@gmail.com
+
+LinkedIn: linkedin.com/in/vivek-mohta-766ab6179
+
+GitHub: github.com/Vivekmohta9
+
+Phone: 8875933184
