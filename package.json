@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:prod": "ng build --configuration production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -27,5 +31,8 @@
     "tslib": "^2.5.0",
     "typescript": "^5.0.4",
     "zone.js": "^0.13.0"
+  },
+  "devDependencies": {
+    "angular-cli-ghpages": "^2.0.3"
   }
 }
