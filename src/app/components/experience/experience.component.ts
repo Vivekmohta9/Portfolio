@@ -19,7 +19,7 @@ export class ExperienceComponent implements OnInit {
       ]
     },
     {
-      company: 'Saint Gobain',
+      company: 'Grindwell Norton Limited',
       title: 'Software Engineer',
       period: 'December 2021 - October 2022',
       responsibilities: [

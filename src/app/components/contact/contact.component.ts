@@ -15,7 +15,7 @@ interface ContactInfo {
 export class ContactComponent implements OnInit {
   contactInfo: ContactInfo = {
     email: 'vivekmohta09@gmail.com',
-    phone: '8875933184',
+    phone: '+91-8875933184',
     linkedIn: 'linkedin.com/in/vivek-mohta-766ab6179',
     github: 'github.com/Vivekmohta9'
   };
