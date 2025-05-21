@@ -5,6 +5,8 @@ header {
   right: 0;
   z-index: 1000;
   transition: all 0.3s ease;
+  background-color: var(--background-light);
+  box-shadow: var(--shadow);
   
   &.scrolled {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -17,8 +19,10 @@ header {
   }
   
   .mat-toolbar {
+    background-color: var(--background-light) !important;
     transition: all 0.3s ease;
     padding: 8px 0;
+    height: 64px;
   }
   
   .container {
@@ -28,7 +32,7 @@ header {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 24px;
   }
   
   .logo {
@@ -37,8 +41,13 @@ header {
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
-      color: white;
+      color: var(--text-primary);
       letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: var(--accent-color);
+      }
     }
   }
   
@@ -53,12 +62,13 @@ header {
         margin-left: 24px;
         
         a {
-          color: white;
+          color: var(--text-primary);
           text-decoration: none;
           font-weight: 500;
           cursor: pointer;
           position: relative;
           padding-bottom: 5px;
+          transition: color 0.3s ease;
           
           &:after {
             content: '';
@@ -67,13 +77,17 @@ header {
             left: 0;
             right: 0;
             height: 2px;
-            background-color: white;
+            background-color: var(--accent-color);
             transform: scaleX(0);
             transition: transform 0.3s ease;
           }
           
-          &:hover:after {
-            transform: scaleX(1);
+          &:hover {
+            color: var(--accent-color);
+            
+            &:after {
+              transform: scaleX(1);
+            }
           }
         }
       }
@@ -81,20 +95,27 @@ header {
   }
   
   .mobile-nav {
-    background-color: #3f51b5;
+    background-color: var(--background-light);
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     z-index: 999;
+    box-shadow: var(--shadow);
     
     .mat-nav-list {
       padding: 0;
       
       a {
-        color: white;
+        color: var(--text-primary);
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.04);
+          color: var(--accent-color);
+        }
         
         &:last-child {
           border-bottom: none;

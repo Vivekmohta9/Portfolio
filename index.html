@@ -13,16 +13,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #3f51b5;
-      --secondary-color: #f50057;
-      --background-color: #f9f9f9;
-      --text-color: #333;
-      --light-gray: #f5f5f5;
-      --medium-gray: #e0e0e0;
-      --dark-gray: #9e9e9e;
+      --primary-color: #2563eb;
+      --secondary-color: #3b82f6;
+      --background-color: #ffffff;
+      --text-color: #1f2937;
+      --light-gray: #f3f4f6;
+      --medium-gray: #e5e7eb;
+      --dark-gray: #6b7280;
       --card-bg: white;
-      --header-bg: white;
-      --footer-bg: #303f9f;
+      --header-bg: rgba(255, 255, 255, 0.95);
+      --footer-bg: #1e40af;
       --footer-text: white;
     }
     
@@ -35,11 +35,20 @@
     
     .header {
       background-color: var(--header-bg);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
       padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+    
+    .header.scrolled {
+      padding: 0.5rem 0;
+      background-color: rgba(255, 255, 255, 0.98);
     }
     
     .nav-link {
@@ -47,35 +56,165 @@
       font-weight: 500;
       margin: 0 0.5rem;
       transition: color 0.3s ease;
+      position: relative;
     }
     
-    .nav-link:hover, .nav-link.active {
-      color: var(--primary-color);
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
     }
     
     .hero {
-      background: linear-gradient(135deg, var(--primary-color), #303f9f);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
-      padding: 5rem 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff10" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
       text-align: center;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     
-    /* Ensure text is always visible in both themes */
-    [data-theme="dark"] .hero h1,
-    [data-theme="dark"] .hero p {
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 2rem;
+      object-fit: cover;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      animation: fadeInUp 1s ease;
+    }
+    
+    .hero-buttons {
+      animation: fadeInUp 1s ease 0.4s;
+      animation-fill-mode: both;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .hero-btn i {
+      font-size: 1.2rem;
+    }
+    
+    .hero-btn-primary {
+      background-color: white;
+      color: var(--primary-color);
+    }
+    
+    .hero-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .hero-btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .hero-btn-secondary:hover {
+      background-color: white;
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .download-cv-btn {
+      position: fixed;
+      bottom: 140px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 100;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .download-cv-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
       color: white;
     }
     
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
+    .download-cv-btn i {
+      font-size: 24px;
     }
     
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto;
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .hero-btn {
+        padding: 0.8rem 1.5rem;
+      }
     }
     
     .section {
@@ -198,19 +337,20 @@
       background-color: var(--primary-color);
       color: white;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       z-index: 100;
       transition: all 0.3s ease;
       text-decoration: none;
     }
     
     .download-cv-btn:hover {
-      transform: scale(1.1);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
       color: white;
     }
     
@@ -309,10 +449,20 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container">
-      <h1>Vivek Mohta</h1>
-      <p>Senior .NET Full Stack Developer with 5 years of experience in designing and developing enterprise applications using .NET Core, Angular, and Azure Cloud Solutions</p>
-      <div class="mt-4">
-        <a href="#contact" class="btn btn-light">Get In Touch</a>
+      <div class="hero-content">
+        <img src="assets/images/profile.jpg" alt="Vivek Mohta" class="profile-image">
+        <h1>Vivek Mohta</h1>
+        <p>Senior .NET Full Stack Developer with 5 years of experience in designing and developing enterprise applications using .NET Core, Angular, and Azure Cloud Solutions</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="hero-btn hero-btn-primary">
+            <i class="material-icons">mail</i>
+            Get In Touch
+          </a>
+          <a href="#projects" class="hero-btn hero-btn-secondary">
+            <i class="material-icons">code</i>
+            View Projects
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -655,6 +805,16 @@
 
     sections.forEach(section => {
       observer.observe(section);
+    });
+
+    // Add this to your existing script
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     });
   </script>
 <script src="runtime.714399acc0b4a3dc.js" type="module"></script><script src="polyfills.e9f727cedb14b958.js" type="module"></script><script src="main.012995c1d458b540.js" type="module"></script></body>

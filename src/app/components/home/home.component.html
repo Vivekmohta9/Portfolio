@@ -1,25 +1,56 @@
 <div class="home-container">
   <!-- Hero Section -->
-  <section id="home" class="hero-section">
+  <section class="hero-section">
     <div class="hero-content">
-      <h1 class="animate-in">Vivek Mohta</h1>
-      <h2 class="animate-in delay-1">Software Engineer</h2>
-      <p class="animate-in delay-2">
-        Specializing in Angular, .NET Core and Azure Cloud Solutions
-      </p>
-      <div class="cta-buttons animate-in delay-3">
-        <button mat-raised-button color="primary" (click)="scrollToSection('about')">About Me</button>
-        <button mat-raised-button color="accent" (click)="scrollToSection('contact')">Get In Touch</button>
+      <div class="hero-text">
+        <h1 class="animate-in">Vivek Mohta</h1>
+        <h2 class="animate-in delay-1">Full Stack Developer</h2>
+        <p class="animate-in delay-2">Passionate about creating elegant solutions to complex problems</p>
+        <div class="cta-buttons animate-in delay-3">
+          <button mat-raised-button color="primary" (click)="scrollToSection('about')">About Me</button>
+          <button mat-raised-button color="accent" (click)="scrollToSection('contact')">Contact</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/profile.jpg" alt="Vivek Mohta">
       </div>
     </div>
   </section>
 
-  <!-- Other Sections -->
-  <app-about></app-about>
-  <app-experience></app-experience>
-  <app-projects></app-projects>
-  <app-skills></app-skills>
-  <app-education></app-education>
-  <app-achievements></app-achievements>
-  <app-contact></app-contact>
+  <div class="sections-container">
+    <!-- About Section -->
+    <section id="about" class="section">
+      <app-about></app-about>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <app-experience></app-experience>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <app-projects></app-projects>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <app-skills></app-skills>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <app-education></app-education>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+      <app-achievements></app-achievements>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <app-contact></app-contact>
+    </section>
+  </div>
 </div>

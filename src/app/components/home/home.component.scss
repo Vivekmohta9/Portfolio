@@ -1,5 +1,6 @@
 .home-container {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .hero-section {
@@ -9,7 +10,7 @@
   align-items: center;
   text-align: center;
   position: relative;
-  background: linear-gradient(135deg, #4a6bea, #6a3be4);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
   
   &:before {
@@ -34,6 +35,7 @@
       font-size: 4rem;
       font-weight: 700;
       margin-bottom: 16px;
+      color: white;
       
       @media (max-width: 768px) {
         font-size: 2.5rem;
@@ -44,6 +46,7 @@
       font-size: 2.5rem;
       font-weight: 300;
       margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.9);
       
       @media (max-width: 768px) {
         font-size: 1.8rem;
@@ -53,6 +56,7 @@
     p {
       font-size: 1.25rem;
       margin-bottom: 32px;
+      color: rgba(255, 255, 255, 0.8);
       
       @media (max-width: 768px) {
         font-size: 1rem;
@@ -72,6 +76,31 @@
         }
       }
     }
+  }
+}
+
+.sections-container {
+  width: 100%;
+}
+
+.section {
+  padding: 80px 0;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &:nth-child(even) {
+    background-color: var(--background-light);
+  }
+  
+  &:nth-child(odd) {
+    background-color: white;
   }
 }
 
@@ -101,5 +130,12 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
   }
 }

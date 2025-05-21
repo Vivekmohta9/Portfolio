@@ -1,50 +1,72 @@
 .contact-section {
-  background-color: #f9f9f9;
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
 }
 
 .contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-top: 32px;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .contact-info {
+  text-align: center;
+  width: 100%;
+  
   h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.8rem;
     margin-bottom: 16px;
-    color: #3f51b5;
+    color: #333;
   }
   
   p {
+    font-size: 1.1rem;
+    color: #666;
     margin-bottom: 32px;
-    line-height: 1.5;
   }
 }
 
 .contact-details {
-  .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+  mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  a {
+    color: #4a6bea;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
     
-    mat-icon {
-      margin-right: 16px;
-    }
-    
-    a {
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      
-      &:hover {
-        color: #3f51b5;
-      }
+    &:hover {
+      color: #6a3be4;
     }
   }
 }
@@ -72,6 +94,34 @@
     
     button {
       align-self: flex-start;
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+  
+  .contact-info {
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .contact-item {
+    a {
+      font-size: 1rem;
     }
   }
 }
